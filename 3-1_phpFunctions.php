@@ -96,6 +96,7 @@ function formatCurrency($inputCurrency)
         <p> <?php formatCurrency($inputCurrency); ?> </p>
     </ol>
 
+    <p><a href="https://github.com/mistichris/wdv341.git">Git Hub Link</a></p>
 
     <div class="footer">
         <a class="" href="../wdv221Homework.html">Christianson Homework Page</a>
