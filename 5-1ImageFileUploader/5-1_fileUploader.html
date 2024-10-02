@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="../styles/stylesheet_flex_responsive.css">
+
+</head>
+
+<body>
+    <div class="wrapper">
+        <header>
+            <h1>WDV341 Intro PHP</h1>
+            <h2>Unit-5 File Uploader (Images) </h2>
+        </header>
+        <section class="frame">
+
+            <h3>Image File Selection Example</h3>
+
+            <form method="post" action="fileUploader.php" enctype="multipart/form-data">
+                <p>
+                    <label for="inFileName">File Name: </label>
+                    <input type="text" name="inFileName" id="inFileName" placeholder="File name on Server">
+                </p>
+                <p>
+                    <label for="inFile">Select a File: </label>
+                    <input type="file" name="inFile" id="inFile" accept=".jpg,.gif,.png,.svg">
+                    <!-- enctype="multipart/form-data"  could also put in the input if doesn't work in form element-->
+                </p>
+                <p>
+                    <input type="submit" name="submit" value="Upload File">
+                    <input type="reset">
+                </p>
+            </form>
+
+        </section>
+        <div class="footer">
+            <a class="" href="../wdv321Homework.html">Christianson Homework Page</a>
+            <a href="https://github.com/mistichris/wdv341.git">Git Hub Link</a>
+            <a class="" href="../../../index.html">Christianson Home Page</a>
+        </div>
+
+        <p>&nbsp;</p>
+    </div>
+</body>
+
+</html>
