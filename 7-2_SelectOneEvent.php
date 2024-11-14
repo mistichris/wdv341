@@ -11,6 +11,8 @@ try {
     $stmt = $conn->prepare($sql);   
 
     //#4 - Bind Parameters - N/A
+    $eventsID = 1;
+    $stmt->bindParam(":eventsID", $eventsID);
 
     //#5 - Execute the PDO Statement/save results in $stmt object
     $stmt->execute();
