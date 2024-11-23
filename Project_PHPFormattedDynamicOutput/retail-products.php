@@ -77,7 +77,6 @@ try {
         ?>
     </section>
 
-
     <div class="footer">
         <a class="" href="../../wdv341Homework.php">WDV341 Homework Page</a>
         <a href="https://github.com/mistichris/wdv341.git">Git Hub Link</a>
@@ -89,16 +88,3 @@ try {
 </body>
 
 </html>
-
-
-<!-- 
-    Your program should pull all rows from the table.
-    Sort in Descending order by product name. 
-    For each row in your table format the content as described in the comments on the 
-        retail-products.php file.
-
-    -If there is content in the product_status field display the contents and apply the 
-        productStatus class to the p container.
-    -If the product_inventory is less than 10 then apply the productLowInventory class 
-        to the inventory p container.
--->
