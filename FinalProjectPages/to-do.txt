@@ -1,0 +1,135 @@
+left off:
+
+join tables in display projects and tasks
+
+
+
+view tasks by user in view all users
+fix assigned Owner on project Detail page
+fix status column on project details
+fix view all usersr mistype on links
+delete users
+restrict if login id is repeated
+
+
+error when connecting to database:
+https://www.geeksforgeeks.org/how-to-execute-an-sql-query-and-fetch-results-using-php/
+remove error from printing at top of the screen
+
+
+how to pull in user names when viewing all tasks
+update honeypots on input/update forms
+Change menu item from usersr to users
+
+create page logo
+create container for input forms/login page/contact page
+create about page
+
+update link to style page
+add sidebar div
+add article div
+add drop down menu bar to home, about, contact for admin functions if user logged in
+
+
+
+SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tok
+    Need in the $_POST[] need to use the name of the label/input used on the previous form page not database column names
+    missing a : in a sql statment
+    Are there any missing commas or extra commas in sql statement
+
+##display side nav menu if logged in
+<section class="frame">
+        <?php
+        if ($_SESSION['validUser'] === "valid") {
+        ?>
+            <div class="sidenav">
+                <ul>
+                    <p><a class="linkOnDark" href="inputUserForm.php">Add New User</a></p>
+                    <p><a class="linkOnDark" href="viewAllUsers.php">View All Users</a></p>
+                    <p><a class="linkOnDark" href="inputProjectForm.php">Add New Project</a></p>
+                    <p><a class="linkOnDark" href="viewAllProjects.php">View All Projects</a></p>
+                </ul>
+            </div>
+        <?php
+        }
+        ?>
+        <div class="article">
+
+##menu change login vs logout
+<body>
+    <div class="wrapper">
+        <header>
+        </header>
+        <nav class="footer">
+            <a class="linkOnDark" href="finalIndex.php">microMANAGEMENT Home</a>
+            <a class="linkOnDark" href="about.php">About microMANAGER</a>
+            <a class="linkOnDark" href="contact.php">Contact US</a>
+            <?php
+            if ($_SESSION['validUser'] === "valid") {
+                echo "<a class='linkOnDark' href='logout.php'>Logout</a>";
+            } else {
+                echo "<a class='linkOnDark' href='login.php'>Login</a>";
+            }
+            ?>
+        </nav>
+
+##zero results returned message
+$taskRow = $stmtTasksByUser->fetch();
+if ($taskRow != null ) {
+    ?>
+ </table>
+ <p></p>
+<?php
+ }
+ } else {
+?>
+</table>
+ <p></p>
+<p class="error"> There are no tasks assigned to this user.</p>
+ <?php
+ }
+?>
+
+###retrieve user names
+ require 'dbConnect.php';
+        //Query database for all possible users
+        //#2 Create your SQL query
+        $sqlUser = "SELECT * FROM mm_users WHERE user_ID = $inUserID";
+        #3 Prepared statement PDO 
+        $stmtUser = $conn->prepare($sqlUser);
+        //#4 - Bind Parameters - N/A
+        //#5 - Execute the PDO Statement/save results in $stmt object
+        $stmtUser->execute();
+        //#6 - Process the results from the query
+        $stmtUser->setFetchMode(PDO::FETCH_ASSOC);
+        $userRow = $stmtUser->fetch();
+        return $userRow['user_firstName'] . " " . $userRow['user_lastName'];
+
+
+###retrieve task by user id
+//#2 Create your SQL query
+    $sqlTasksByUser = "SELECT * FROM mm_task
+    WHERE task_assignedTo = $userID";
+
+    #3 Prepared statement PDO 
+    $stmtTasksByUser = $conn->prepare($sqlTasksByUser);
+
+    //#5 - Execute the PDO Statement/save results in $stmt object
+    $stmtTasksByUser->execute();
+
+    //#6 - Process the results from the query
+    $stmtTasksByUser->setFetchMode(PDO::FETCH_ASSOC);
+
+
+##retrieve task by project ID
+ //#2 Create your SQL query
+    $sql2 = "SELECT * FROM mm_task 
+    JOIN mm_project ON mm_task.task_project = mm_project.project_id
+    WHERE mm_task.task_project = $projectID";
+
+    #3 Prepared statement PDO 
+    $stmt2 = $conn->prepare($sql2);
+    //#5 - Execute the PDO Statement/save results in $stmt object
+    $stmt2->execute();
+    //#6 - Process the results from the query
+    $stmt2->setFetchMode(PDO::FETCH_ASSOC);

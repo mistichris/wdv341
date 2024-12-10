@@ -1,0 +1,373 @@
+/* fixed width container: 75% or 1024px */
+.container {
+  max-width: 75%;
+  margin: 20px auto 0 auto;
+  padding: 5px;
+  /* background-color: #FFF; */
+  /* border-style: solid; */
+  /* border-color: blue; */
+}
+
+/* set max width and add a background*/
+.wrapper {
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 10px;
+  max-width: 1000px;
+}
+
+/* pretty frames to make stuff pop on the background*/
+.frame {
+  background-color: rgb(186, 186, 186, 0.50);
+  border-radius: 5px;
+  border-style: groove;
+  /* padding: 15px; */
+  margin-top: 10px;
+  display: flex;
+}
+
+.error {
+  font-weight: bold;
+  color: red;
+}
+
+section{
+  display: -webkit-flex;
+  display: flex;
+}
+
+.spaced {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 30px 0;
+  /* justify-content: space-around; */
+  background-color: lightslategray;
+}
+
+.sidenav {
+  flex: 1;
+  background: rgb(99, 135, 170);
+  /* border: 2px double purple; */
+  /* padding: 5px; */
+  /* margin: 0 auto; */
+  align-items: center;
+  padding: 30px 0;
+  justify-content: space-around;
+
+}
+
+/* Style the content */
+.article {
+  flex: 4;
+  background-color:rgba(248, 229, 213, 0.993);
+  padding: 10px;
+}
+
+table,
+td {
+    border: thin solid black;
+    border-collapse: collapse;
+    word-wrap: wordwrap;
+}
+
+.tableheader {
+    font-weight: bold;
+}
+
+.header {
+  /* background-image: url('logo.jpg');
+  background-repeat: no-repeat;
+  background-size: 100% 100%; */
+  /* height: 300px;
+  font-size: 40px; */
+  /* color: white; */
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+}
+
+/* Format header */
+header {
+  background-image: url('logo.jpg');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  height: 200px;
+  padding: .5em;
+  text-align: center;
+}
+
+
+.row {
+  display: flex;
+  padding: 10px;
+}
+
+.row>label {
+  flex: 1;
+  padding: .5em .5em .5em 0;
+}
+
+.row>select {
+  flex: 4;
+  -ms-flex-align: start;
+}
+
+.row>input {
+  flex: 4;
+}
+
+.row>input,
+.row>button {
+  padding: .5em;
+}
+
+/* .head.columns1 {
+  flex: 1;
+}
+
+.head.columns2 {
+  flex: 1;
+} */
+
+/* responsive for smaller screen size */
+@media(max-width: 1000px) {
+  .headcolumnlogo>h1 {
+    font-size: 75px;
+  }
+}
+
+/* responsive for smaller screen size */
+@media screen and (max-width: 768px) {
+  .columns {
+    flex-direction: column;
+  }
+
+  .column1 {
+    order: 1;
+  }
+
+  .column2 {
+    order: 2;
+  }
+
+  .column3 {
+    order: 3;
+  }
+
+  .container {
+    max-width: 100%;
+  }
+
+  .row {
+    flex-direction: column;
+    flex-direction: wrap;
+    align-content: center;
+    margin: auto;
+  }
+
+  .columns,
+  .column1,
+  .column2,
+  .column3,
+  .row {
+    flex-direction: column;
+    flex-wrap: wrap;
+    flex: 50%;
+    max-width: 50%;
+  }
+
+  .column1 {
+    order: 1;
+
+  }
+
+  .column2 {
+    order: 2;
+  }
+
+  .column3 {
+    order: 3;
+  }
+
+  footer {
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+
+}
+
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media (max-width: 576px) {
+  .column {
+    flex: 100%;
+    max-width: 100%;
+  }
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  padding: 30px 0;
+  justify-content: space-around;
+  background-color: lightslategray;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  padding: 30px 0;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  /* background-color: rgb(34, 218, 34);
+  border-style: solid;
+  border-color: blue; */
+}
+
+/* .body {
+  background-color: rgb(223, 223, 223);
+  border-style: solid;
+  border-color: blue;
+} */
+
+/* .gallery {
+  column-count: 2;
+  column-gap: 5px;
+  display: flex;
+  flex-wrap: wrap;
+} */
+
+/* img {
+  padding: 0px;
+  margin: 10px;
+  border-style: solid;
+  border-color: black;
+  border-width: 1px;
+  border-radius: 5px;
+} */
+
+
+
+/* .columns {
+  display: flex;
+}
+
+.column1 {
+  flex: 2;
+}
+
+.column2 {
+  flex: 2;
+}
+
+.column3 {
+  flex: 1;
+  flex-direction: column;
+} */
+
+/* .column3.row1 {
+  flex: 1;
+} */
+
+/* .column3.row2 {
+  flex: 1;
+} */
+
+/* .column3.row3 {
+  flex: 1;
+} */
+
+/* .row2 {
+  padding: 10px;
+  margin: 0px;
+} */
+
+.footer {
+
+  display: flex;
+  align-items: center;
+  padding: 30px 0;
+  justify-content: space-around;
+  background-color: lightslategray;
+  /* border-style: solid;
+  border-color: blue; */
+}
+
+.floatright {
+  float: right;
+}
+
+.floatleft {
+  float: left;
+}
+
+.ohnohoney {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 0;
+  width: 0;
+  z-index: -1;
+}
+.center {
+  display: flex;
+  padding: 30px 0;
+  justify-content: space-around;
+  background-color: lightslategray;
+  text-align: center;
+}
+
+/* h1 {
+ padding: 10px;
+  margin: 10px;
+} */
+
+/* h2 {
+  font-size: 45px;
+  color: brown;
+  padding: 10px;
+  margin: 0px;
+  text-align: center;
+  column-span: all;
+} */
+
+/* h3 {
+  font-size: 20px;
+  color: rgb(21, 129, 21);
+  padding: 10px;
+  margin: 0px;
+} */
+
+.alignleft {
+  text-align: left;
+}
+
+p {
+  padding: 5px;
+  margin: 5px;
+}
+
+.ul {
+  list-style-position: inside;
+  padding: 10px;
+  margin: 10px;
+  align-content: center;
+}
+
+li {
+  padding: 10px;
+  margin: 10px;
+}
+
+.shadow {
+  box-shadow: 10px 10px 5px lightblue;
+  padding: 20px;
+  margin: 20px;
+}
+
+iframe {
+  padding: 0px;
+  margin: 10px;
+}
