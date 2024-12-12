@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="../styles/stylesheet_flex_responsive.css">
+    <style>
+        /* form p:nth-child(5) {
+            opacity: 0;
+            display: hidden;
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 0;
+            width: 0;
+            z-index: -1;
+        } */
+
+        form p:nth-child(6) {
+            opacity: 0;
+            display: hidden;
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 0;
+            width: 0;
+            z-index: -1;
+        }
+    </style>
+</head>
+
+<!--    mac keyboard:  shift + option + f  == format page
+        thinkpad keyboard:      shift + alt + f  == format page   
+
+    1. Create an HTML form with the following fields.
+        -Contact Name:                   (the name of the person trying to contact you)
+        -Contact Email Address:          (the email address of the person trying to contact you)
+        -A drop down with a list of reasons for contact
+        -Comments:
+            
+    2. The form page should be formatted and styled as a business web page. You are 
+                welcome to use a previous project as the basis for this project.
+    3. The form fields should be validated as appropriate.
+    4. When the form is submitted it will send the form data to a page called formHandler.php.
+      
+-->
+
+
+<body>
+    <div class="wrapper">
+        <header>
+            <h1>WDV341 Intro PHP</h1>
+            <h2>PROJECT: Email Contact Form </h2>
+        </header>
+        <section class="frame">
+
+            <h3>Email Contact Form</h3>
+
+            <form id="form1" name="contactForm" method="post" action="formHandler.php" autocomplete="off">
+                <h2>Contact Form:</h2>
+
+                <p>
+                    <label class="label" for="first_name">First Name:</label>
+                    <input type="text" name="first_name" id="first_name" placeholder="First Name" required />
+                </p>
+
+                <p>
+                    <label class="label" for="last_name">Last Name:</label>
+                    <input type="text" name="last_name" id="last_name" placeholder="Last Name" required />
+                </p>
+
+                <p>
+                    <label class="label" for="email">Email Address:</label>
+                    <input type="email" name="email" id="email" placeholder="sample@email.com" required />
+                </p>
+
+                <p>
+                    <label class="label" for="reason">Reason for contact: </label>
+                    <select id="reason" name="reason" required>
+                        <option value="default" selected disabled>Select a Reason</option>
+                        <option value="opinion">Just Because</option>
+                        <option value="s_suggestion">Site Suggestion</option>
+                        <option value="suggestion">General Suggestion</option>
+                        <option value="job">Job Opportunity</option>
+                        <option value="other">Other</option>
+                    </select>
+                </p>
+
+                <p>
+                    <label for="city"></label>
+                    <input autocomplete="nope" type="city" id="city" name="city" placeholder="City Name">
+                    <label for="name"></label>
+                    <input autocomplete="nope" type="text" id="name" name="name" placeholder="Your name here">
+                </p>
+
+                <p>
+                    <label class="label" type="text" id="comments">Comments: </label>
+                </p>
+                <p>
+                    <textarea name="comments" id="comments" rows="5" cols="45" placeholder="Insert Comments Here"
+                        maxlength="200" required></textarea>
+                </p>
+
+                <p>
+                    <input type="submit" name="submit" value="Submit">
+                    <input type="reset">
+                </p>
+            </form>
+
+        </section>
+        <div class="footer">
+            <a class="" href="../../wdv341Homework.php">WDV341 Homework Page</a>
+            <a href="https://github.com/mistichris/wdv341.git">Git Hub Link</a>
+            <a class="" href="../../../index.html">Christianson Home Page</a>
+        </div>
+
+        <p>&nbsp;</p>
+    </div>
+</body>
+
+</html>
