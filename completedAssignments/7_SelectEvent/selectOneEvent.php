@@ -1,29 +1,27 @@
 <?php
-session_start();
-if ($_SESSION['validUser'] !== true) {
-    //you are NOT a valid user and CANNOT access this page
-    header("Location: ../login.php");      //server side redirect
-}
 
+// $eventsID = $_GET('eventsID');
+$eventsID = 1;
 try {
     //1. Connect to the database
-    require 'dbConnect.php';
+    require '../dbConnect.php';
 
     //2. Create your SQL query
-    $sql = "SELECT * FROM wdv341_events WHERE events_ID = :eventsID";
+    $sql = "SELECT events_name, events_description FROM wdv341_events WHERE events_ID = :eventsID";
 
     //3. Prepare your PDO statement - returns statement object/value, need to catch it in variable '$stmt'
     $stmt = $conn->prepare($sql);   
 
     //#4 - Bind Parameters - N/A
-    $eventsID = 1;
-    $stmt->bindParam(':eventsID', $eventsID);
+    
+    $stmt->bindParam(":eventsID", $eventsID);
 
     //#5 - Execute the PDO Statement/save results in $stmt object
     $stmt->execute();
 
     //#6 - Process the results from the query
     $stmt->setFetchMode(PDO::FETCH_ASSOC);
+
 
 } catch (PDOException $e) {
     echo "Database Failed: " . $e->getMessage();

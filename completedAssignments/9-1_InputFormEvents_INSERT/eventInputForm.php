@@ -1,8 +1,7 @@
 <?php
 session_start();
-if ($_SESSION['validUser'] !== true) {
-    //you are NOT a valid user and CANNOT access this page
-    header("Location: ../login.php");      //server side redirect
+if ($_SESSION['validUser'] !== "valid") {
+    header("Location: ../../login.php");     
 }
 
 ?>
@@ -14,7 +13,7 @@ if ($_SESSION['validUser'] !== true) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="../styles/stylesheet_flex_responsive.css">
+    <link rel="stylesheet" type="text/css" href="../../styles/stylesheet_flex_responsive.css">
     <title>Document</title>
     <style>
         form p:nth-child(6) {
@@ -34,9 +33,8 @@ if ($_SESSION['validUser'] !== true) {
             <h2>Unit-9 INSERT - Input form sends data to the database</h2>
         </header>
         <nav class="spaced">
-            <!-- <li><a href="eventInputForm.php">Add New Event</a></li> -->
-            <li><a href="../7_SelectEvent/selectEvents.php">Display Events</a></li>
-            <li><a href="../logout.php">Logout</a></li>
+            <li><a href="../selectEvents.php">Display Events</a></li>
+            <li><a href="../../logout.php">Logout</a></li>
         </nav>
         <section class="frame">
             <form method="post" action="insertEvent.php">
@@ -76,7 +74,6 @@ if ($_SESSION['validUser'] !== true) {
                     <label for="email"></label>
                     <input autocomplete="off" type="email" id="email" name="email" placeholder="Your e-mail here">
                 </p>
-
                 <p>
                     <input type="submit" name="" id="" value="Submit">
                     <input type="reset" name="" id="" value="Reset">
@@ -87,9 +84,9 @@ if ($_SESSION['validUser'] !== true) {
             </form>
         </section>
         <div class="footer">
-            <a class="" href="../wdv341Homework.html">WDV341 Homework Page</a>
+            <a class="" href="../../../wdv341Homework.php">WDV341 Homework Page</a>
             <a href="https://github.com/mistichris/wdv341.git">Git Hub Link</a>
-            <a class="" href="../../../index.html">Christianson Home Page</a>
+            <a class="" href="../../../../index.html">Christianson Home Page</a>
         </div>
     </div>
 </body>
